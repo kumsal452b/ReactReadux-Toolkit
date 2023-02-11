@@ -1,7 +1,9 @@
 import {configureStore} from '@reduxjs/toolkit'
-import cartReducer from '../src/features/cart/cartSlice'
+import cartSlice from '../src/features/cart/cartSlice'
+import modalSlice from './features/cart/modalSlice'
 export const store=configureStore({
     reducer:{
-        cart:cartReducer
+        cart:cartSlice,
+        modal:modalSlice
     }
 })

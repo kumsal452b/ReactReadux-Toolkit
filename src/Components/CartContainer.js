@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { clearCart } from "../features/cart/cartSlice";
+import { openModal } from "../features/cart/modalSlice";
 import { CartItems } from "./CartItems";
 
 const CartContainer = () => {
@@ -16,7 +16,9 @@ const CartContainer = () => {
       </section>
     );
   }
-
+  const onModalAlert=()=>{
+    dispatch(openModal())
+  }
   return (
     <section className="cart">
       <header>
@@ -34,7 +36,7 @@ const CartContainer = () => {
             Total <span>${total}</span>
           </h4>
         </div>
-        <button className="btn clear-btn" onClick={()=>dispatch(clearCart())}>Clear cart</button>
+        <button className="btn clear-btn" onClick={onModalAlert}>Clear cart</button>
       </footer>
     </section>
   );
